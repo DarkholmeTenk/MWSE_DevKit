@@ -218,8 +218,8 @@ local functional = {
             mwse.log("Unpack has no id attribute")
             return
         end
-        local unpack = elementAttributeHelper.csvSplit(elementAttributeHelper.str)(attributes.unpack)
-        if(unpack ~= nil) then
+        if(attributes.unpack ~= nil) then
+            local unpack = elementAttributeHelper.csvSplit(elementAttributeHelper.str)(attributes.unpack)
             for _,v in pairs(unpack) do
                 renderData[id .. "#" .. v] = from[v]
             end
